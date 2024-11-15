@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jelajah Pariwisata Malang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/data.js"></script>
+  </head>
+  <body>
+    <div class="">
+      <!-- Navbar -->
+      <nav class="bg-white shadow fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <a href="/">
+              <h1 class="font-bold text-xl">
+                Holiday<span class="text-green-700">Malang</span>
+              </h1>
+            </a>
+            <!-- Navbar Links for Desktop -->
+            <div class="hidden md:flex space-x-10">
+              <a href="/" class="text-primary hover:text-green-600">Beranda</a>
+              <a href="/odtw.html" class="text-primary hover:text-green-600"
+                >Objek Wisata</a
+              >
+              <a href="/paket.html" class="text-primary hover:text-green-600"
+                >Paket Wisata</a
+              >
+              <a href="/faq.html" class="text-primary hover:text-green-600"
+                >FAQ</a
+              >
+            </div>
+            <!-- Hamburger Icon for Mobile -->
+            <div class="md:hidden">
+              <button id="menu-button" class="text-primary focus:outline-none">
+                <div class="w-6 h-6">
+                  <div class="h-0.5 w-full bg-current my-1"></div>
+                  <div class="h-0.5 w-full bg-current my-1"></div>
+                  <div class="h-0.5 w-full bg-current my-1"></div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="hidden md:hidden">
+            <div class="flex flex-col space-y-8 py-8">
+              <a href="/" class="text-primary hover:text-green-600">Beranda</a>
+              <a href="/profile" class="text-primary hover:text-green-600"
+                >Profile</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Paket Wisata Section -->
+      <section class="py-16 pt-32 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+          <!-- Section Title -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+              Paket Wisata
+            </h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+              Pilih paket wisata terbaik kami untuk menjelajahi destinasi indah
+              di Malang dan sekitarnya.
+            </p>
+          </div>
+
+          <div x-data="{ wisataData: window.wisataData }">
+            <!-- Paket Wisata Cards -->
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <template
+                x-for="(category, categoryIndex) in wisataData"
+                :key="categoryIndex"
+              >
+                <template
+                  x-for="(item, itemIndex) in category.wisata"
+                  :key="itemIndex"
+                >
+                  <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col"
+                  >
+                    <!-- Image Section -->
+                    <img
+                      :src="item.gambar[0]"
+                      :alt="item.nama"
+                      class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6 flex-1">
+                      <!-- Title -->
+                      <h3
+                        class="text-xl font-semibold text-gray-800"
+                        x-text="item.nama"
+                      ></h3>
+                      <!-- Price -->
+                      <p
+                        class="text-primary font-bold mt-2 text-xl text-green-700"
+                        x-text="item.harga"
+                      ></p>
+                      <!-- Schedule -->
+                      <p
+                        class="text-gray-500 text-sm mt-1"
+                        x-text="'Jadwal: ' + item.jadwal"
+                      ></p>
+                      <!-- Description -->
+                      <p
+                        class="text-gray-700 mt-2 leading-relaxed"
+                        x-text="item.deskripsi"
+                      ></p>
+                    </div>
+                  </div>
+                </template>
+              </template>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="bg-green-800 text-white py-10">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="md:flex md:justify-between md:items-center">
+            <!-- Contact Info -->
+            <div class="mb-8 md:mb-0">
+              <h2 class="text-2xl font-bold">Kontak Kami</h2>
+              <p class="text-gray-400 mt-4">
+                Jika ada pertanyaan atau ingin reservasi, hubungi kami melalui
+                kontak berikut:
+              </p>
+              <ul class="mt-4 space-y-2">
+                <li>
+                  <div class="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                      />
+                    </svg>
+
+                    <a
+                      href="mailto:info@jelajahmalang.com"
+                      class="hover:text-primary"
+                      >info@holidaymalang.com</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                      />
+                    </svg>
+
+                    <a href="tel:+6281234567890" class="hover:text-primary"
+                      >+62 812-3456-7890</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="flex gap-2">
+                    <svg
+                      fill="#ffffff"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 169.063 169.063"
+                      xml:space="preserve"
+                      stroke="#ffffff"
+                      class="size-5"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <g>
+                          <path
+                            d="M122.406,0H46.654C20.929,0,0,20.93,0,46.655v75.752c0,25.726,20.929,46.655,46.654,46.655h75.752 c25.727,0,46.656-20.93,46.656-46.655V46.655C169.063,20.93,148.133,0,122.406,0z M154.063,122.407 c0,17.455-14.201,31.655-31.656,31.655H46.654C29.2,154.063,15,139.862,15,122.407V46.655C15,29.201,29.2,15,46.654,15h75.752 c17.455,0,31.656,14.201,31.656,31.655V122.407z"
+                          ></path>
+                          <path
+                            d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561 C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561 c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z"
+                          ></path>
+                          <path
+                            d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78 c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78 C135.661,29.421,132.821,28.251,129.921,28.251z"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                    <a
+                      href="https://instagram.com/jelajahmalang"
+                      class="hover:text-primary"
+                      >@holidaymalang</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center md:text-right">
+              <p class="text-gray-400">
+                &copy; 2024 Holiday Malang. All Rights Reserved.
+              </p>
+              <p class="text-gray-400 mt-2">Designed by Holiday Malang Team</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.3/dist/cdn.min.js"></script>
+  </body>
+</html>

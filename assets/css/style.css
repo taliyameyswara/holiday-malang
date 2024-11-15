@@ -1,0 +1,25 @@
+body {
+  font-family: "Poppins", sans-serif;
+  /* background-color: #f5f5f5; */
+}
+
+.swiper-wrapper {
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+.swiper-pagination-bullet {
+  background-color: #16803c !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #16803c !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
