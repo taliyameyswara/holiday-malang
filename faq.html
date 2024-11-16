@@ -73,6 +73,7 @@
       </nav>
 
       <!-- FAQ Section -->
+      <!-- FAQ Section -->
       <section class="py-24 pt-32 bg-gray-100">
         <div class="max-w-6xl mx-auto px-4">
           <!-- Section Title -->
@@ -97,9 +98,9 @@
                 @click="open = !open"
                 class="w-full text-left px-6 py-4 flex justify-between items-center"
               >
-                <span class="font-semibold text-gray-800"
-                  >Apakah saya bisa membatalkan paket perjalanan?</span
-                >
+                <span class="font-semibold text-gray-800">
+                  Apakah saya bisa membatalkan paket perjalanan?
+                </span>
                 <svg
                   :class="{'rotate-180': open}"
                   class="w-5 h-5 transform transition-transform"
@@ -132,9 +133,9 @@
                 @click="open = !open"
                 class="w-full text-left px-6 py-4 flex justify-between items-center"
               >
-                <span class="font-semibold text-gray-800"
-                  >Bagaimana metode pembayaran yang tersedia?</span
-                >
+                <span class="font-semibold text-gray-800">
+                  Bagaimana metode pembayaran yang tersedia?
+                </span>
                 <svg
                   :class="{'rotate-180': open}"
                   class="w-5 h-5 transform transition-transform"
@@ -166,9 +167,9 @@
                 @click="open = !open"
                 class="w-full text-left px-6 py-4 flex justify-between items-center"
               >
-                <span class="font-semibold text-gray-800"
-                  >Apakah ada diskon khusus untuk pemesanan grup?</span
-                >
+                <span class="font-semibold text-gray-800">
+                  Apakah ada diskon khusus untuk pemesanan grup?
+                </span>
                 <svg
                   :class="{'rotate-180': open}"
                   class="w-5 h-5 transform transition-transform"
@@ -188,6 +189,117 @@
               >
                 Ya, kami menyediakan diskon khusus untuk pemesanan grup besar.
                 Untuk informasi lebih lanjut, hubungi tim penjualan kami.
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div
+              x-data="{ open: false }"
+              class="border border-gray-300 rounded-lg"
+            >
+              <button
+                @click="open = !open"
+                class="w-full text-left px-6 py-4 flex justify-between items-center"
+              >
+                <span class="font-semibold text-gray-800">
+                  Bagaimana cuaca di malang, dan apa yang harus dipersiapkan
+                  sebelum berkunjung?
+                </span>
+                <svg
+                  :class="{'rotate-180': open}"
+                  class="w-5 h-5 transform transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06 0L10 10.94l3.71-3.73a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 010-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                class="px-6 py-4 text-gray-700 border-t border-gray-300"
+              >
+                Cuaca di Malang pada umumnya sejuk, terutama di daerah Batu.
+                Pastikan membawa pakaian hangat, terutama jika mengunjungi area
+                pegunungan seperti Bromo atau Batu. Jangan lupa juga membawa
+                payung atau jas hujan saat musim hujan (Oktober–April).
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div
+              x-data="{ open: false }"
+              class="border border-gray-300 rounded-lg"
+            >
+              <button
+                @click="open = !open"
+                class="w-full text-left px-6 py-4 flex justify-between items-center"
+              >
+                <span class="font-semibold text-gray-800">
+                  Apa yang menjadikan destinasi malang menjadi wisata unggulan
+                  dibandingkan kota lain di jawa timur?
+                </span>
+                <svg
+                  :class="{'rotate-180': open}"
+                  class="w-5 h-5 transform transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06 0L10 10.94l3.71-3.73a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 010-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                class="px-6 py-4 text-gray-700 border-t border-gray-300"
+              >
+                Malang memiliki kombinasi unik antara keindahan alam, budaya
+                lokal, dan fasilitas wisata modern. Kota Malang menawarkan
+                suasana sejuk dan asri menjadikannya cocok bagi wisatawan yang
+                ingin menikmati liburan santai.
+              </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div
+              x-data="{ open: false }"
+              class="border border-gray-300 rounded-lg"
+            >
+              <button
+                @click="open = !open"
+                class="w-full text-left px-6 py-4 flex justify-between items-center"
+              >
+                <span class="font-semibold text-gray-800">
+                  Adakah tips untuk menghindari keramaian saat berwisata di
+                  malang?
+                </span>
+                <svg
+                  :class="{'rotate-180': open}"
+                  class="w-5 h-5 transform transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06 0L10 10.94l3.71-3.73a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 010-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                class="px-6 py-4 text-gray-700 border-t border-gray-300"
+              >
+                Untuk menghindari keramaian, kunjungi destinasi wisata di luar
+                jam sibuk, seperti pagi hari atau hari kerja. Sebaiknya hindari
+                liburan akhir pekan panjang karena tempat wisata biasanya lebih
+                ramai.
               </div>
             </div>
           </div>
