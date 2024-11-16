@@ -12,6 +12,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/data.js"></script>
   </head>
   <body>
     <div class="">
@@ -73,18 +74,31 @@
               <label for="metode_pembayaran" class="block text-gray-700"
                 >Paket Wisata</label
               >
-              <select
-                id="paket_wisata"
-                name="paket_wisata"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                required
+              <div
+                x-data="{
+                wisataData: window.wisataData, // Ambil data wisata dari window
+            }"
               >
-                <option value="">Pilih Wisata</option>
-                <option value="pantai_balekambang">Pantai Balekambang</option>
-                <option value="museum">Museum Angkut</option>
-                <option value="coban">Coban Rando</option>
-                <option value="gunung">Gunung Bromo</option>
-              </select>
+                <select
+                  id="paket_wisata"
+                  name="paket_wisata"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  required
+                >
+                  <!-- Default option -->
+                  <option value="">Pilih Wisata</option>
+
+                  <!-- Loop through jenis wisata (misal "Wisata Alam dan Edukasi") -->
+                  <template x-for="jenis in wisataData" :key="jenis.jenis">
+                    <optgroup :label="jenis.jenis">
+                      <!-- Loop through wisata dalam jenis ini -->
+                      <template x-for="item in jenis.wisata" :key="item.id">
+                        <option :value="item.nama" x-text="item.nama"></option>
+                      </template>
+                    </optgroup>
+                  </template>
+                </select>
+              </div>
             </div>
 
             <!-- Nama Lengkap -->
@@ -137,8 +151,6 @@
                   id="harga"
                   name="harga"
                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                  readonly
-                  value="500,000"
                 />
               </div>
             </div>
